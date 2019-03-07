@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/contive"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<LinearLayout
+		android:elevation="4dp"
+		android:layout_width="match_parent"
+		android:orientation="horizontal"
+		android:layout_height="56dp"
+		android:background="#FF000000">
+
+		<ImageView
+			android:paddingLeft="8dp"
+			android:id="@+id/toolbar_back"
+			android:layout_width="40dp"
+			android:layout_height="40dp"
+			android:layout_gravity="center_vertical"
+			android:src="@drawable/toolbar_back_white"/>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			android:gravity="center_vertical|center_horizontal"
+			android:orientation="horizontal">
+
+			<FrameLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content">
+
+				<TextView
+					android:id="@+id/toolbar_text"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:singleLine="true"
+					android:ellipsize="end"
+					android:layout_gravity="center"
+					android:text="裁剪图片"
+					android:textColor="#ffffffff"
+					android:textSize="18sp"/>
+
+			</FrameLayout>
+
+		</LinearLayout>
+
+		<ImageView
+			android:id="@+id/toolbar_ok"
+			android:paddingRight="8dp"
+			android:layout_width="40dp"
+			android:layout_height="40dp"
+			android:layout_gravity="center_vertical"
+			android:visibility="visible"
+			android:src="@drawable/toolbar_ok_white"/>
+
+	</LinearLayout>
+
+	<com.library.admin.mosimage.view.ClipImageLayout
+		android:id="@+id/dlg_clipImageLayout"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"/>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<Button
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="裁剪"
+			android:id="@+id/dlg_btn_clip"
+			android:visibility="gone"/>
+
+	</LinearLayout>
+
+</RelativeLayout>
+

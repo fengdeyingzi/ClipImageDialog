@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/contive"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#aaaaaa">
+
+	<com.library.admin.mosimage.view.ClipImageLayout
+		android:id="@+id/id_clipImageLayout"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"/>
+
+	<Button
+		android:id="@+id/button1"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentRight="true"
+		android:onClick="showHeadPopWindow"
+		android:text="选择图片"/>
+
+	<Button
+		android:id="@+id/button"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentEnd="true"
+		android:layout_alignParentTop="true"
+		android:onClick="chip"
+		android:text="裁剪"
+		android:layout_alignParentRight="true"/>
+
+	<ImageView
+		android:id="@+id/img_clip"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:src="@android:drawable/ic_menu_close_clear_cancel"/>
+
+</RelativeLayout>
+
