@@ -29,16 +29,16 @@ public class ClipPhotoDialog extends Dialog
 	OnClipImageListener listener;
 	ImageView img_back,img_ok;
 	
-	public ClipPhotoDialog(Context context){
+	public ClipPhotoDialog(Context context,String filename){
 		super(context);
 		this.context = context;
 		LayoutInflater factory =(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
 		//LayoutInflater factory = LayoutInflater.from(context);
 		View Layout =  factory.inflate(R.layout.dlg_clipimage, null);
-		 clipLayout = Layout.findViewById(R.id.dlg_clipImageLayout);
-		img_ok = Layout.findViewById(R.id.toolbar_ok);
-		img_back = Layout.findViewById(R.id.toolbar_back);
+		 clipLayout = (ClipImageLayout) Layout.findViewById(R.id.dlg_clipImageLayout);
+		img_ok = (ImageView) Layout.findViewById(R.id.toolbar_ok);
+		img_back = (ImageView) Layout.findViewById(R.id.toolbar_back);
 		img_ok.setOnClickListener(new View.OnClickListener(){
 
 				@Override
@@ -84,7 +84,7 @@ public class ClipPhotoDialog extends Dialog
 		window.getDecorView().setBackgroundColor(Color.BLACK);
 
 			
-		File file = new File("/sdcard/1.png");
+		File file = new File(filename);
 		Bitmap bitmap = BitmapFactory.decodeFile(file.getPath());
 		clipLayout.getZoomImageView().setImageBitmap(bitmap);
 	}

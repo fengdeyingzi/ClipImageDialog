@@ -57,12 +57,31 @@ public class MainActivity extends Activity {
         mClipImageLayout = (ClipImageLayout) findViewById(R.id.id_clipImageLayout);
         contview = findViewById(R.id.contive);
         
-		img_clip = findViewById(R.id.img_clip);
+		img_clip = (ImageView) findViewById(R.id.img_clip);
 		
 		initImageDialog();
-		
-		ClipPhotoDialog dd = new ClipPhotoDialog(this);
+		//assets解压到files目录
+		File file_jpg = new File(getFilesDir(),"a.jpg");
+		try
+		{
+			InputStream input = getAssets().open("a.jpg");
+			byte[] data = new byte[input.available()];
+			input.read(data);
+			FileOutputStream out = new FileOutputStream(file_jpg);
+			out.write(data);
+			out.flush();
+			out.close();
+			input.close();
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+		//创建裁剪对话框，参数：Context对象，图片路径
+		ClipPhotoDialog dd = new ClipPhotoDialog(this, file_jpg.getPath());
+		//显示对话框
 		dd.show();
+		//设置图片裁剪返回文件
 		dd.setOnClipListener(new ClipPhotoDialog.OnClipImageListener(){
 
 				@Override
